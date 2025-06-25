@@ -2,9 +2,7 @@ parameters:
   level: 0
   paths:
     - src
-    - tests
   ignoreErrors:
-    - '#Call to an undefined static method PHPStan\\Type\\TypeCombinator\:\:add\(\)\.#'
-    - '#Call to static method message\(\) on an unknown class MartinSoenen\\PHPStanRules\\Rules\\RuleErrorBuilder\.#'
 rules:
+    - MartinSoenen\PHPStanRules\Rules\MaxLinePerClassRule
     - MartinSoenen\PHPStanRules\Rules\NoTryCatchRule
