@@ -1,9 +1,10 @@
 <?php
 
-namespace MartinSoenen\PHPStanRules\Tests\Rules\data;
+namespace MartinSoenen\PHPStanRules\Tests\Rules\data\MaxLinePerClassRule;
 
-class MaxLinePerClassRuleHas99Lines
+class HundredLinesClass
 {
+
 
 
 

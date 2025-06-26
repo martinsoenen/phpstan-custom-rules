@@ -23,9 +23,9 @@ class MaxLinePerClassRuleTest extends RuleTestCase
         // first argument: path to the example file that contains some errors that should be reported by MyRule
         // second argument: an array of expected errors,
         // each error consists of the asserted error message, and the asserted error file line
-        $this->analyse([__DIR__ . '/data/MaxLinePerClassRuleHas100Lines.php'], [
+        $this->analyse([__DIR__ . '/data/MaxLinePerClassRule/HundredLinesClass.php'], [
             [
-                "The MaxLinePerClassRuleHas100Lines class has more than 100 code lines. Please reduce it.", // asserted error message
+                "The HundredLinesClass class has more than 100 code lines. Please reduce it.", // asserted error message
                 5, // asserted error line
             ],
         ]);
@@ -33,6 +33,6 @@ class MaxLinePerClassRuleTest extends RuleTestCase
 
     public function testRuleDoesNotDumpException(): void
     {
-        $this->analyse([__DIR__ . '/data/MaxLinePerClassRuleHas99Lines.php'], []);
+        $this->analyse([__DIR__ . '/data/MaxLinePerClassRule/NinetyNineLinesClass.php'], []);
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace MartinSoenen\PHPStanRules\Tests\Rules\data;
+namespace MartinSoenen\PHPStanRules\Tests\Rules\data\NoTryCatchRule;
 
-class NoTryCatchRuleHasATryCatch
+class TryCatch
 {
     public function index(): bool
     {

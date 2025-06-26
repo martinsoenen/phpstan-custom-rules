@@ -18,13 +18,13 @@ class NoTryCatchRuleTest extends RuleTestCase
 
     public function testRuleDumpAnException(): void
     {
-        $this->analyse([__DIR__ . '/data/NoTryCatchRuleHasATryCatch.php'], [
+        $this->analyse([__DIR__ . '/data/NoTryCatchRule/TryCatch.php'], [
             ["Try-catch's are forbidden. Please use Exceptions instead.", 9],
         ]);
     }
 
     public function testRuleDoesNotDumpException(): void
     {
-        $this->analyse([__DIR__ . '/data/NoTryCatchRuleHasNoTryCatch.php'], []);
+        $this->analyse([__DIR__ . '/data/NoTryCatchRule/NoTryCatch.php'], []);
     }
 }
