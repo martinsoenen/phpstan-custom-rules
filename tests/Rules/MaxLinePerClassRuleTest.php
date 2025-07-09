@@ -3,15 +3,13 @@
 namespace MartinSoenen\PHPStanRules\Tests\Rules;
 
 use MartinSoenen\PHPStanRules\Rules\MaxLinePerClassRule;
-use MartinSoenen\PHPStanRules\Rules\NoTryCatchRule;
 use PHPStan\Testing\RuleTestCase;
 
 /**
- * @extends RuleTestCase<NoTryCatchRule>
+ * @extends RuleTestCase<MaxLinePerClassRule>
  */
 class MaxLinePerClassRuleTest extends RuleTestCase
 {
-
     protected function getRule(): \PHPStan\Rules\Rule
     {
         // getRule() method needs to return an instance of the tested rule
