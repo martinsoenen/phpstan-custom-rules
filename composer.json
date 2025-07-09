@@ -1,4 +1,13 @@
 {
+    "name": "martinsoenen/phpstan-custom-rules",
+    "type": "phpstan-extension",
+    "description": "Faker allows you to generate realistic fake data for your php applications",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Soenen"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "MartinSoenen\\PHPStanRules\\": "src/",
@@ -10,5 +19,8 @@
     },
     "require": {
         "phpstan/phpstan": "^2.1"
+    },
+    "config": {
+        "sort-packages": true
     }
 }
