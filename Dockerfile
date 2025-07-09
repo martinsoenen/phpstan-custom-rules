@@ -1,4 +1,4 @@
-FROM php:latest
+FROM php:7.4
 
 RUN apt update
 RUN apt install unzip curl -y

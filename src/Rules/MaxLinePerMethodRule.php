@@ -9,7 +9,7 @@ use PHPStan\Rules\RuleErrorBuilder;
 
 class MaxLinePerMethodRule implements Rule
 {
-    private const int MAX_LINES = 20;
+    private const MAX_LINES = 20;
 
     public function getNodeType(): string
     {
