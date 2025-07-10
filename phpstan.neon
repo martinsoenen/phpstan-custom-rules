@@ -5,5 +5,6 @@ parameters:
 rules:
     - MartinSoenen\PHPStanRules\Rules\MaxLinePerClassRule
     - MartinSoenen\PHPStanRules\Rules\MaxLinePerMethodRule
+    - MartinSoenen\PHPStanRules\Rules\NoGenericWordRule
     - MartinSoenen\PHPStanRules\Rules\NoLaravelObserverRule
     - MartinSoenen\PHPStanRules\Rules\NoTryCatchRule
