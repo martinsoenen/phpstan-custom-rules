@@ -12,6 +12,8 @@ use PHPStan\Rules\RuleErrorBuilder;
  */
 class NoLaravelObserverRule implements Rule
 {
+    protected static string $ruleIdentifier = 'martinsoenen.noLaravelObserver';
+
     public function getNodeType(): string
     {
         return Node::class;
@@ -31,7 +33,10 @@ class NoLaravelObserverRule implements Rule
     protected function checkObserveMethod(array &$errors, Node $node) : void
     {
         if ($node instanceof Node\Expr\StaticCall && $node->name->toString() === 'observe') {
-            $errors[] = RuleErrorBuilder::message('The use of model Observers is forbidden in this project. Please use Event & Listeners instead.')->line($node->getLine())->build();
+            $errors[] = RuleErrorBuilder::message('The use of model Observers is forbidden in this project. Please use Event & Listeners instead.')
+                ->line($node->getLine())
+                ->identifier(self::$ruleIdentifier)
+                ->build();
         }
     }
 
@@ -42,7 +47,10 @@ class NoLaravelObserverRule implements Rule
             $namespace = $scope->getNamespace();
 
             if (str_ends_with($className, 'Observer') || str_contains($namespace, 'Observers')) {
-                $errors[] = RuleErrorBuilder::message('Observer classes or classes in the Observers namespace are forbidden in this project. Please use Event & Listeners instead.')->line($node->getLine())->build();
+                $errors[] = RuleErrorBuilder::message('Observer classes or classes in the Observers namespace are forbidden in this project. Please use Event & Listeners instead.')
+                    ->line($node->getLine())
+                    ->identifier(self::$ruleIdentifier)
+                    ->build();
             }
         }
     }
@@ -53,7 +61,10 @@ class NoLaravelObserverRule implements Rule
             foreach ($node->attrGroups as $attrGroup) {
                 foreach ($attrGroup->attrs as $attr) {
                     if ($attr->name->getParts() !== null && in_array('ObservedBy', $attr->name->getParts(), true)) {
-                        $errors[] = RuleErrorBuilder::message('The use of the ObservedBy attribute is forbidden in this project. Please use Event & Listeners instead.')->line($node->getLine())->build();
+                        $errors[] = RuleErrorBuilder::message('The use of the ObservedBy attribute is forbidden in this project. Please use Event & Listeners instead.')
+                            ->line($node->getLine())
+                            ->identifier(self::$ruleIdentifier)
+                            ->build();
                         break 2;
                     }
                 }

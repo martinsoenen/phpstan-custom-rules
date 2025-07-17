@@ -32,6 +32,7 @@ class MaxLinePerMethodRule implements Rule
                     )
                 )
                 ->line($node->getLine())
+                ->identifier('martinsoenen.maxLinePerMethod')
                 ->build(),
             ];
         }

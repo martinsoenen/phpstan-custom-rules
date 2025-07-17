@@ -18,9 +18,10 @@ class NoTryCatchRule implements Rule
     public function processNode(Node $node, Scope $scope): array
     {
         return [
-            RuleErrorBuilder::message(
-                "Try-catch's are forbidden. Please use Exceptions instead."
-            )->line($node->getLine())->build(),
+            RuleErrorBuilder::message("Try-catch's are forbidden. Please use Exceptions instead.")
+                ->line($node->getLine())
+                ->identifier('martinsoenen.noTryCatch')
+                ->build(),
         ];
     }
 }

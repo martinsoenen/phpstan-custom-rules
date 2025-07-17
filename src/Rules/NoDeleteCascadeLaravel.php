@@ -36,9 +36,10 @@ class NoDeleteCascadeLaravel implements Rule
         }
 
         foreach ($cascadeDeletes as $cascadeDelete) {
-            $errors[] = RuleErrorBuilder::message(
-                "Cascade delete detected in migration. Please do not delete cascade on the database. Handle it in the code instead."
-            )->line($cascadeDelete->getLine())->build();
+            $errors[] = RuleErrorBuilder::message("Cascade delete detected in migration. Please do not delete cascade on the database. Handle it in the code instead.")
+                ->line($cascadeDelete->getLine())
+                ->identifier('martinsoenen.noCascadeDeleteLaravel')
+                ->build();
         }
 
         return $errors;

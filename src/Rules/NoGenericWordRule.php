@@ -61,6 +61,7 @@ class NoGenericWordRule implements Rule
                     )
                 )
                 ->line($node->getLine())
+                ->identifier('martinsoenen.noGenericWord')
                 ->build()
             ];
         }
