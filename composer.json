@@ -2,7 +2,6 @@
     "name": "martinsoenen/phpstan-custom-rules",
     "type": "phpstan-extension",
     "description": "Some custom PHPStan extensions for a better code base",
-    "version": "0.1.0",
     "license": "MIT",
     "keywords": [
         "phpstan",
