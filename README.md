@@ -1,8 +1,11 @@
 # PHPStan Custom Rules
 
-Some few custom PHPStan extensions to improve the readability, maintainability and overall quality of your PHP code base.
+[![CI state](https://img.shields.io/github/actions/workflow/status/martinsoenen/phpstan-custom-rules/tests.yml)](https://github.com/martinsoenen/phpstan-custom-rules)
+[![Packagist version](https://img.shields.io/packagist/v/martinsoenen/phpstan-custom-rules)](https://packagist.org/packages/martinsoenen/phpstan-custom-rules)
 
-This is based on PHPStan. You can find the source package [here](https://phpstan.org/).
+> Some custom PHPStan extensions to improve the readability, maintainability and overall quality of your PHP code base.
+
+Package based on PHPStan. You can find the source package [here](https://phpstan.org/).
 
 ### Supported PHP versions
 | PHP version | This package version |
