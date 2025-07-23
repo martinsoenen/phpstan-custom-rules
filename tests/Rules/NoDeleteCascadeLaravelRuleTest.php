@@ -9,7 +9,7 @@ use PHPStan\Testing\RuleTestCase;
 /**
  * @extends RuleTestCase<NoDeleteCascadeLaravel>
  */
-class NoDeleteCascadeLaravelTest extends RuleTestCase
+class NoDeleteCascadeLaravelRuleTest extends RuleTestCase
 {
     protected function getRule(): Rule
     {
@@ -18,7 +18,7 @@ class NoDeleteCascadeLaravelTest extends RuleTestCase
 
     public function testRuleDetectsCascade(): void
     {
-        $this->analyse([__DIR__ . '/data/NoDeleteCascadeLaravel/BadMigration.php'], [
+        $this->analyse([__DIR__ . '/data/NoDeleteCascadeLaravelRule/BadMigration.php'], [
             ['Cascade delete detected in migration. Please do not delete cascade on the database. Handle it in the code instead.', 22],
             ['Cascade delete detected in migration. Please do not delete cascade on the database. Handle it in the code instead.', 30],
             ['Cascade delete detected in migration. Please do not delete cascade on the database. Handle it in the code instead.', 37]
@@ -27,11 +27,11 @@ class NoDeleteCascadeLaravelTest extends RuleTestCase
 
     public function testRuleWithNoCascadeInFile(): void
     {
-        $this->analyse([__DIR__ . '/data/NoDeleteCascadeLaravel/GoodMigration.php'], []);
+        $this->analyse([__DIR__ . '/data/NoDeleteCascadeLaravelRule/GoodMigration.php'], []);
     }
 
     public function testRuleWorksOnlyOnLaravelMigrations(): void
     {
-        $this->analyse([__DIR__ . '/data/NoDeleteCascadeLaravel/NotALaravelMigration.php'], []);
+        $this->analyse([__DIR__ . '/data/NoDeleteCascadeLaravelRule/NotALaravelMigration.php'], []);
     }
 }
