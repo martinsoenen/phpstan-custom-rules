@@ -46,6 +46,12 @@ For all available options, please take a look at the PHPStan documentation: **ht
 
 ## Rules
 
+### Boolean Property Naming Rule
+
+*Identifier : martinsoenen.booleanPropertyNaming*
+
+Ensure that a Boolean is always named with an “is” at the beginning of its name, to clarify the condition it represents.
+
 ### Max Line Per Class Rule
 
 *Identifier : martinsoenen.maxLinePerClass*
@@ -57,6 +63,12 @@ Guarantee that a class is no more than 100 lines long, to clearly separate roles
 *Identifier : martinsoenen.maxLinePerMethod*
 
 Guarantee that a method is no more than 20 lines long, to separate roles between classes and encourage specification.
+
+### No Basic Exception Rule
+
+*Identifier : martinsoenen.noBasicException*
+
+Ensure that no base exceptions are thrown in order to make custom and specific exceptions everywhere for better maintainability.
 
 ### No Delete Cascade Rule (Laravel)
 
@@ -87,9 +99,3 @@ This rule encourages the use of Events & Listeners, whose behavior is similar bu
 
 Prevent `try catch` usage to ensure that the user uses PHP exceptions.  
 This makes the code more readable and errors are handled by the framework if there is one.
-
-### Boolean Property Naming Rule
-
-*Identifier : martinsoenen.booleanPropertyNaming*
-
-Ensure that a Boolean is always named with an “is” at the beginning of its name, to clarify the condition it represents.

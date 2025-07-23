@@ -1,6 +1,8 @@
 rules:
+    - MartinSoenen\PHPStanRules\Rules\BooleanPropertyNamingRule
     - MartinSoenen\PHPStanRules\Rules\MaxLinePerClassRule
     - MartinSoenen\PHPStanRules\Rules\MaxLinePerMethodRule
+    - MartinSoenen\PHPStanRules\Rules\NoBasicExceptionRule
     - MartinSoenen\PHPStanRules\Rules\NoDeleteCascadeLaravel
     - MartinSoenen\PHPStanRules\Rules\NoGenericWordRule
     - MartinSoenen\PHPStanRules\Rules\NoLaravelObserverRule
